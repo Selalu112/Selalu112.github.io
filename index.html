@@ -19,10 +19,11 @@
     </a>
     <nav aria-label="Navigasi utama">
       <button class="nav-link active" data-view="booking">Pesan Tiket</button>
-      <button class="nav-link" data-view="reports">Auto Report</button>
-      <a class="nav-link desktop-only" href="#features">Fitur</a>
+      <button class="nav-link desktop-only" id="check-booking-button">Cek Booking</button>
+      <a class="nav-link desktop-only" href="#services">Layanan</a>
+      <a class="nav-link desktop-only" href="#outlets">Outlet</a>
     </nav>
-    <button class="login-button">Masuk</button>
+    <button class="login-button" data-view="reports">Portal Admin</button>
   </header>
 
   <main>
@@ -46,8 +47,18 @@
             <label><span>Tanggal pergi</span><input id="travel-date" type="date" required></label>
             <label><span>Penumpang</span><select id="passengers"><option value="1">1 Penumpang</option><option value="2">2 Penumpang</option><option value="3">3 Penumpang</option><option value="4">4 Penumpang</option></select></label>
           </div>
-          <button class="primary-button" type="submit">Cari Jadwal <span>→</span></button>
+          <div class="search-actions"><span>Temukan jadwal dan harga terbaik untuk perjalananmu.</span><button class="primary-button" type="submit">Cari Jadwal <span>→</span></button></div>
         </form>
+      </section>
+
+      <section id="services" class="services-section">
+        <div class="section-heading"><div><span class="eyebrow">LAYANAN TERINTEGRASI</span><h2>Lebih dari sekadar tiket shuttle</h2></div><p>Semua kanal layanan dapat menggunakan satu akun dan satu dashboard operator.</p></div>
+        <div class="service-grid">
+          <article><span class="service-tag">01</span><h3>Shuttle</h3><p>Pemesanan pool-to-pool dengan jadwal dan kursi real-time.</p><button data-scroll-booking>Pesan tiket →</button></article>
+          <article><span class="service-tag">02</span><h3>Express</h3><p>Pengiriman dokumen dan paket antarkota dengan pelacakan resi.</p><button id="track-package-button">Cek resi →</button></article>
+          <article><span class="service-tag">03</span><h3>Sewa Armada</h3><p>Reservasi kendaraan untuk perjalanan bisnis, grup, dan wisata.</p><button class="demo-action">Lihat armada →</button></article>
+          <article><span class="service-tag">04</span><h3>Membership</h3><p>Poin, voucher, promo khusus, dan riwayat seluruh transaksi.</p><button class="demo-action">Lihat benefit →</button></article>
+        </div>
       </section>
 
       <section id="results" class="results hidden" aria-live="polite">
@@ -64,22 +75,34 @@
           <article><span class="feature-icon">✓</span><h3>Transaksi aman</h3><p>Pembayaran terverifikasi dan tiket langsung diterbitkan.</p></article>
         </div>
       </section>
+
+      <section class="express-section">
+        <div class="express-copy"><span class="eyebrow">EXPRESS DELIVERY</span><h2>Kirim paket antarkota, pantau sampai tujuan.</h2><p>Pengiriman same-day, layanan home-to-home, asuransi paket, dan pembaruan status otomatis.</p><div class="express-points"><span>✓ Same-day delivery</span><span>✓ Home-to-home</span><span>✓ Asuransi paket</span></div></div>
+        <form id="inline-tracking-form" class="tracking-card"><span class="package-icon">▣</span><h3>Lacak paketmu</h3><p>Masukkan nomor resi untuk melihat posisi dan riwayat pengiriman.</p><label><span>Nomor resi</span><input required placeholder="Contoh: TFEXP26080001"></label><button class="primary-button">Lacak Sekarang</button></form>
+      </section>
+
+      <section id="outlets" class="outlet-section">
+        <div class="section-heading"><div><span class="eyebrow">JARINGAN OUTLET</span><h2>Hadir di kota-kota utama</h2></div><button class="outline-button demo-action">Lihat semua outlet</button></div>
+        <div class="city-grid"><article><strong>12</strong><span>Jakarta</span><small>outlet & pickup point</small></article><article><strong>5</strong><span>Bandung</span><small>outlet & pickup point</small></article><article><strong>7</strong><span>Yogyakarta</span><small>outlet & pickup point</small></article><article><strong>6</strong><span>Semarang</span><small>outlet & pickup point</small></article><article><strong>4</strong><span>Surabaya</span><small>outlet & pickup point</small></article></div>
+      </section>
     </section>
 
     <section id="reports-view" class="view report-view">
       <aside class="report-sidebar">
         <div class="brand report-brand"><span class="brand-mark">TF</span><span>Travel<span>Flow</span></span></div>
         <span class="sidebar-label">MENU UTAMA</span>
-        <button class="sidebar-item">▦ Dashboard</button>
-        <button class="sidebar-item active">↗ Auto Report</button>
-        <button class="sidebar-item">▤ Pemesanan</button>
-        <button class="sidebar-item">◫ Jadwal & Armada</button>
-        <button class="sidebar-item">◎ Outlet & Agen</button>
+        <button class="sidebar-item" data-admin-page="dashboard">▦ Dashboard</button>
+        <button class="sidebar-item active" data-admin-page="reports">↗ Auto Report</button>
+        <button class="sidebar-item" data-admin-page="bookings">▤ Pemesanan & Tiket</button>
+        <button class="sidebar-item" data-admin-page="operations">◫ Jadwal & Armada</button>
+        <button class="sidebar-item" data-admin-page="network">◎ Outlet & Agen</button>
+        <button class="sidebar-item" data-admin-page="express">▣ Express & Resi</button>
+        <button class="sidebar-item" data-admin-page="promos">◇ Promo & Member</button>
         <span class="sidebar-label">PENGATURAN</span>
-        <button class="sidebar-item">⚙ Branding</button>
-        <button class="sidebar-item">♙ Pengguna</button>
+        <button class="sidebar-item" data-admin-page="branding">⚙ Branding White-label</button>
+        <button class="sidebar-item" data-admin-page="users">♙ Pengguna & Akses</button>
       </aside>
-      <div class="report-content">
+      <div id="admin-panel" class="report-content">
         <header class="report-header"><div><span class="mobile-report-label">TravelFlow Admin</span><h1>Auto Report</h1><p>Ringkasan performa bisnis dalam satu tampilan.</p></div><div class="report-actions"><select><option>30 hari terakhir</option><option>7 hari terakhir</option><option>Bulan ini</option></select><button class="export-button">Unduh Laporan</button></div></header>
         <div class="stat-grid">
           <article><span>Total pendapatan</span><strong>Rp486,2 jt</strong><small class="up">↑ 18,4% dari periode lalu</small></article>
@@ -107,6 +130,28 @@
         <aside class="booking-summary"><h3>Ringkasan</h3><div><span>Perjalanan</span><strong id="summary-route">Jakarta → Bandung</strong></div><div><span>Kursi dipilih</span><strong id="summary-seats">Belum dipilih</strong></div><div><span>Total</span><strong id="summary-total">Rp0</strong></div><button id="continue-button" class="primary-button" disabled>Lanjutkan</button><small>Kursi ditahan selama 10 menit setelah melanjutkan.</small></aside>
       </div>
     </section>
+  </div>
+
+  <div id="checkout-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-checkout></div>
+    <section class="modal-card checkout-card" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="modal-close" data-close-checkout aria-label="Tutup">×</button>
+      <div class="checkout-progress"><span class="done">1 Jadwal</span><i></i><span class="done">2 Kursi</span><i></i><span class="active">3 Data & Bayar</span></div>
+      <div class="modal-heading"><span class="eyebrow">SELESAIKAN PEMESANAN</span><h2 id="checkout-title">Data penumpang & pembayaran</h2><p>Kursi Anda ditahan selama <strong id="hold-timer">09:59</strong>.</p></div>
+      <form id="checkout-form" class="checkout-layout">
+        <div class="checkout-fields">
+          <h3>Kontak pemesan</h3><div class="field-row"><label><span>Nama lengkap</span><input required value="Muhtar"></label><label><span>Nomor WhatsApp</span><input required placeholder="08xxxxxxxxxx"></label></div>
+          <label><span>Email e-ticket</span><input type="email" required placeholder="nama@email.com"></label>
+          <h3>Metode pembayaran</h3><div class="payment-grid"><label><input type="radio" name="payment" checked><span><b>QRIS</b><small>Semua aplikasi pembayaran</small></span></label><label><input type="radio" name="payment"><span><b>Virtual Account</b><small>BCA, BRI, Mandiri, BNI</small></span></label><label><input type="radio" name="payment"><span><b>E-Wallet</b><small>GoPay, DANA, ShopeePay</small></span></label><label><input type="radio" name="payment"><span><b>Bayar di Outlet</b><small>Tunai atau kartu</small></span></label></div>
+        </div>
+        <aside class="booking-summary checkout-summary"><h3>Detail perjalanan</h3><div><span>Rute</span><strong id="checkout-route"></strong></div><div><span>Jadwal</span><strong id="checkout-schedule"></strong></div><div><span>Kursi</span><strong id="checkout-seats"></strong></div><div><span>Total pembayaran</span><strong id="checkout-total"></strong></div><button class="primary-button" type="submit">Bayar & Terbitkan Tiket</button><small>Dengan melanjutkan, Anda menyetujui syarat perjalanan dan kebijakan pembatalan.</small></aside>
+      </form>
+    </section>
+  </div>
+
+  <div id="tracking-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-tracking></div>
+    <section class="modal-card tracking-modal-card" role="dialog" aria-modal="true" aria-labelledby="tracking-title"><button class="modal-close" data-close-tracking>×</button><span class="eyebrow">PELACAKAN</span><h2 id="tracking-title">Cek booking atau resi</h2><form id="tracking-form"><label><span>Kode booking / nomor resi</span><input required value="TF-260806-A82K"></label><button class="primary-button">Cari Status</button></form><div id="tracking-result" class="tracking-result hidden"><span class="status-badge">Dalam perjalanan</span><h3>TF-260806-A82K</h3><div class="timeline"><p class="done"><b>Pesanan dikonfirmasi</b><small>Jakarta • 08.15 WIB</small></p><p class="done"><b>Berangkat dari outlet</b><small>Grogol • 09.04 WIB</small></p><p><b>Tiba di tujuan</b><small>Estimasi 12.15 WIB</small></p></div></div></section>
   </div>
 
   <div id="toast" class="toast" role="status"></div>
