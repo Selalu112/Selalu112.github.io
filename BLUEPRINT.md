@@ -52,6 +52,52 @@ TravelFlow adalah SaaS reservasi shuttle white-label multi-tenant. Satu platform
 9. Notifikasi WhatsApp/email
 10. Dashboard serta Auto Report
 
+## Cakupan fitur setara platform operator shuttle modern
+
+### Kanal pelanggan
+
+- Beranda, pencarian sekali jalan/pulang-pergi, promo, dan informasi layanan
+- Pemilihan kota, outlet/pickup point, tanggal, jumlah penumpang, jadwal, dan kelas armada
+- Pemilihan kursi visual, data penumpang, kode promo, dan checkout
+- QRIS, virtual account, e-wallet, kartu, serta pembayaran di outlet
+- E-ticket/QR, cek booking, reschedule, refund, dan riwayat perjalanan
+- Daftar outlet per kota, detail armada/fasilitas, cara bayar, bantuan, syarat, dan blog
+- Akun pelanggan, membership, poin, voucher, dan notifikasi
+
+### Shuttle dan operasional
+
+- Master kota, outlet, virtual pickup point, rute, titik singgah, dan zona
+- Jadwal berulang/khusus, tarif hari biasa/weekend/musim, kelas armada, dan kuota
+- Armada, layout kursi, fasilitas, dokumen, servis, sopir, kru, serta roster
+- Dispatch, manifest, check-in/boarding, no-show, perubahan armada, dan keterlambatan
+- GPS, estimasi tiba, geofence, histori perjalanan, dan ketepatan waktu
+- Penjualan walk-in, kas shift, cetak tiket, agen, deposit, dan komisi
+
+### Express dan layanan tambahan
+
+- Tarif berdasarkan rute, berat aktual/volume, tipe layanan, dan asuransi
+- Pickup, sortir, manifest, perjalanan, outlet tujuan, pelacakan resi, dan proof of delivery
+- Sewa armada/grup, permintaan penawaran, kalender ketersediaan, dan invoice
+
+### Komersial dan administrasi
+
+- Promo, kode voucher, kuota, segmentasi, loyalty tier, dan membership
+- Payment reconciliation, settlement outlet/agen, refund, dan audit log
+- White-label logo, warna, domain, aplikasi, e-ticket, invoice, WhatsApp, dan email
+- Role-based access untuk owner, admin, operasional, kasir, agen, auditor, sopir, dan pelanggan
+- Auto Report PDF/Excel terjadwal melalui WhatsApp/email
+
+## Layar yang tersedia pada demo penjualan
+
+- Landing dan pencarian tiket yang responsif
+- Daftar jadwal dan harga
+- Pemilihan kursi
+- Data pemesan dan pilihan pembayaran
+- Simulasi penerbitan e-ticket
+- Cek booking/pelacakan resi
+- Layanan Shuttle, Express, sewa armada, membership, dan jaringan outlet
+- Dashboard, Auto Report, booking, jadwal/armada, outlet/agen, Express, promo/member, branding, dan pengguna
+
 ## Auto Report
 
 - Ringkasan penjualan harian, mingguan, dan bulanan
