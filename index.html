@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b6b57">
+  <meta name="description" content="TravelFlow — platform reservasi shuttle white-label dengan Auto Report.">
+  <title>TravelFlow — Shuttle Booking Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="TravelFlow beranda">
+      <span class="brand-mark">TF</span>
+      <span>Travel<span>Flow</span></span>
+    </a>
+    <nav aria-label="Navigasi utama">
+      <button class="nav-link active" data-view="booking">Pesan Tiket</button>
+      <button class="nav-link" data-view="reports">Auto Report</button>
+      <a class="nav-link desktop-only" href="#features">Fitur</a>
+    </nav>
+    <button class="login-button">Masuk</button>
+  </header>
+
+  <main>
+    <section id="booking-view" class="view active">
+      <section id="home" class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">PERJALANAN ANTARKOTA</span>
+          <h1>Berangkat nyaman.<br><em>Tiba tanpa ribet.</em></h1>
+          <p>Pesan shuttle, pilih kursi favorit, dan nikmati perjalanan yang lebih tenang.</p>
+          <div class="trust-row">
+            <span>✓ Jadwal fleksibel</span><span>✓ Kursi terjamin</span><span>✓ Pembayaran aman</span>
+          </div>
+        </div>
+
+        <form id="search-form" class="search-card">
+          <div class="trip-tabs"><button type="button" class="trip-tab active">Sekali jalan</button><button type="button" class="trip-tab">Pulang pergi</button></div>
+          <div class="search-grid">
+            <label><span>Dari</span><select id="origin"><option>Jakarta</option><option>Bandung</option><option>Semarang</option><option>Yogyakarta</option></select></label>
+            <button type="button" id="swap-route" class="swap" aria-label="Tukar rute">⇄</button>
+            <label><span>Ke</span><select id="destination"><option>Bandung</option><option>Jakarta</option><option>Semarang</option><option>Yogyakarta</option></select></label>
+            <label><span>Tanggal pergi</span><input id="travel-date" type="date" required></label>
+            <label><span>Penumpang</span><select id="passengers"><option value="1">1 Penumpang</option><option value="2">2 Penumpang</option><option value="3">3 Penumpang</option><option value="4">4 Penumpang</option></select></label>
+          </div>
+          <button class="primary-button" type="submit">Cari Jadwal <span>→</span></button>
+        </form>
+      </section>
+
+      <section id="results" class="results hidden" aria-live="polite">
+        <div class="section-heading"><div><span class="eyebrow">JADWAL TERSEDIA</span><h2 id="route-title">Jakarta → Bandung</h2></div><span id="result-date" class="date-pill"></span></div>
+        <div id="schedule-list" class="schedule-list"></div>
+      </section>
+
+      <section id="features" class="features-section">
+        <div class="section-heading centered"><div><span class="eyebrow">KENAPA MEMILIH KAMI</span><h2>Satu perjalanan, semua lebih mudah</h2></div></div>
+        <div class="feature-grid">
+          <article><span class="feature-icon">◎</span><h3>Pilih kursi sendiri</h3><p>Lihat ketersediaan real-time dan amankan kursi favoritmu.</p></article>
+          <article><span class="feature-icon">⌁</span><h3>Jadwal fleksibel</h3><p>Banyak pilihan jam berangkat dari outlet terdekat.</p></article>
+          <article><span class="feature-icon">⌖</span><h3>Perjalanan terlacak</h3><p>Pantau posisi armada dan estimasi waktu tiba.</p></article>
+          <article><span class="feature-icon">✓</span><h3>Transaksi aman</h3><p>Pembayaran terverifikasi dan tiket langsung diterbitkan.</p></article>
+        </div>
+      </section>
+    </section>
+
+    <section id="reports-view" class="view report-view">
+      <aside class="report-sidebar">
+        <div class="brand report-brand"><span class="brand-mark">TF</span><span>Travel<span>Flow</span></span></div>
+        <span class="sidebar-label">MENU UTAMA</span>
+        <button class="sidebar-item">▦ Dashboard</button>
+        <button class="sidebar-item active">↗ Auto Report</button>
+        <button class="sidebar-item">▤ Pemesanan</button>
+        <button class="sidebar-item">◫ Jadwal & Armada</button>
+        <button class="sidebar-item">◎ Outlet & Agen</button>
+        <span class="sidebar-label">PENGATURAN</span>
+        <button class="sidebar-item">⚙ Branding</button>
+        <button class="sidebar-item">♙ Pengguna</button>
+      </aside>
+      <div class="report-content">
+        <header class="report-header"><div><span class="mobile-report-label">TravelFlow Admin</span><h1>Auto Report</h1><p>Ringkasan performa bisnis dalam satu tampilan.</p></div><div class="report-actions"><select><option>30 hari terakhir</option><option>7 hari terakhir</option><option>Bulan ini</option></select><button class="export-button">Unduh Laporan</button></div></header>
+        <div class="stat-grid">
+          <article><span>Total pendapatan</span><strong>Rp486,2 jt</strong><small class="up">↑ 18,4% dari periode lalu</small></article>
+          <article><span>Tiket terjual</span><strong>4.286</strong><small class="up">↑ 12,7% dari periode lalu</small></article>
+          <article><span>Rata-rata okupansi</span><strong>82,6%</strong><small class="up">↑ 6,2% dari periode lalu</small></article>
+          <article><span>Refund</span><strong>1,8%</strong><small class="down">↓ 0,6% dari periode lalu</small></article>
+        </div>
+        <div class="report-grid">
+          <article class="chart-card revenue-card"><div class="card-title"><div><h3>Tren Pendapatan</h3><p>Pendapatan kotor per minggu</p></div><strong>Rp486,2 jt</strong></div><div id="bar-chart" class="bar-chart"></div></article>
+          <article class="chart-card occupancy-card"><div class="card-title"><div><h3>Okupansi</h3><p>Rata-rata seluruh armada</p></div></div><div class="donut-wrap"><div class="donut"><span>82,6%<small>Terisi</small></span></div><div class="legend"><span><i class="green"></i>Terisi <b>82,6%</b></span><span><i class="soft"></i>Tersedia <b>17,4%</b></span></div></div></article>
+          <article class="chart-card route-card"><div class="card-title"><div><h3>Rute Terlaris</h3><p>Berdasarkan nilai transaksi</p></div><button>Lihat semua</button></div><div class="route-table"><div class="table-head"><span>Rute</span><span>Tiket</span><span>Okupansi</span><span>Pendapatan</span></div><div><span><b>Jakarta → Bandung</b><small>Setiap hari</small></span><span>1.248</span><span><mark>91%</mark></span><strong>Rp142,8 jt</strong></div><div><span><b>Bandung → Jakarta</b><small>Setiap hari</small></span><span>1.086</span><span><mark>87%</mark></span><strong>Rp125,4 jt</strong></div><div><span><b>Jakarta → Semarang</b><small>Setiap hari</small></span><span>764</span><span><mark>79%</mark></span><strong>Rp98,6 jt</strong></div></div></article>
+          <article class="chart-card automation-card"><div class="card-title"><div><h3>Pengiriman Otomatis</h3><p>Jadwal laporan aktif</p></div><button class="plus-button">+</button></div><div class="automation-item"><span class="channel-icon">WA</span><div><b>Laporan Harian Owner</b><small>Setiap hari • 20.00 WIB</small></div><span class="status-on">Aktif</span></div><div class="automation-item"><span class="channel-icon email">@</span><div><b>Rekonsiliasi Mingguan</b><small>Setiap Senin • 08.00 WIB</small></div><span class="status-on">Aktif</span></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="seat-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="seat-title">
+      <button class="modal-close" data-close-modal aria-label="Tutup">×</button>
+      <div class="modal-heading"><span class="eyebrow">PILIH KURSI</span><h2 id="seat-title">Jakarta → Bandung</h2><p id="selected-schedule"></p></div>
+      <div class="seat-content">
+        <div class="bus-layout"><div class="driver">◉</div><div id="seat-grid" class="seat-grid"></div></div>
+        <aside class="booking-summary"><h3>Ringkasan</h3><div><span>Perjalanan</span><strong id="summary-route">Jakarta → Bandung</strong></div><div><span>Kursi dipilih</span><strong id="summary-seats">Belum dipilih</strong></div><div><span>Total</span><strong id="summary-total">Rp0</strong></div><button id="continue-button" class="primary-button" disabled>Lanjutkan</button><small>Kursi ditahan selama 10 menit setelah melanjutkan.</small></aside>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
