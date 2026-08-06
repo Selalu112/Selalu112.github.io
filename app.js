@@ -238,3 +238,10 @@ const initialView = new URLSearchParams(window.location.search).get('view');
 if (initialView === 'reports') switchView('reports');
 const initialAdmin = new URLSearchParams(window.location.search).get('admin');
 if (initialAdmin && adminTemplates[initialAdmin]) renderAdminPage(initialAdmin);
+const initialDemo = new URLSearchParams(window.location.search).get('demo');
+if (initialDemo === 'checkout') {
+  state.schedule = schedules[0];
+  state.selectedSeats = [1];
+  openCheckout();
+}
+if (initialDemo === 'tracking') openTracking();
